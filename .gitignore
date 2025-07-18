@@ -1,0 +1,12 @@
+# Node modules
+node_modules
+
+# Next.js build output
+.next
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/

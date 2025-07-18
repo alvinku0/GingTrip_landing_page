@@ -1,0 +1,300 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Gradient text styles */
+.gradient-text {
+    background: linear-gradient(135deg, #007828 0%, #00b13b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gradient-text-special {
+    background: linear-gradient(30deg, #00561d 0%, #1fb350 70%, #ca9bff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* --- Animated Word Carousel Styles --- */
+.word-carousel-wrapper {
+    display: inline-block;
+    position: relative;
+    overflow: visible;
+    min-height: 8rem;
+}
+
+.placeholder {
+    visibility: hidden;
+}
+
+.word-carousel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform-style: preserve-3d;
+    animation: spin 12s infinite;
+}
+
+.carousel-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    color: #6366F1;
+}
+
+.carousel-face:nth-child(1) {
+    transform: rotateX(0deg) translateZ(35px);
+}
+.carousel-face:nth-child(2) {
+    transform: rotateX(90deg) translateZ(35px);
+}
+.carousel-face:nth-child(3) {
+    transform: rotateX(180deg) translateZ(35px);
+}
+.carousel-face:nth-child(4) {
+    transform: rotateX(270deg) translateZ(35px);
+}
+
+@keyframes spin {
+    0%, 20% {
+        transform: rotateX(0deg);
+    }
+    25%, 45% {
+        transform: rotateX(-90deg);
+    }
+    50%, 70% {
+        transform: rotateX(-180deg);
+    }
+    75%, 95% {
+        transform: rotateX(-270deg);
+    }
+    100% {
+        transform: rotateX(-360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-face:nth-child(1) {
+        transform: rotateX(0deg) translateZ(20px);
+    }
+    .carousel-face:nth-child(2) {
+        transform: rotateX(90deg) translateZ(20px);
+    }
+    .carousel-face:nth-child(3) {
+        transform: rotateX(180deg) translateZ(20px);
+    }
+    .carousel-face:nth-child(4) {
+        transform: rotateX(270deg) translateZ(20px);
+    }
+}
+
+/* === HERO BACKGROUND STYLES === */
+.hero-background {
+    position: relative;
+    /* background: #d4dfd8e1; */
+    background: linear-gradient(to top right, #d9e7dee1 0%, #ffffff 100%);
+    overflow: hidden;
+}
+
+.hero-background .background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    perspective: 1200px;
+}
+
+.hero-background .layer {
+    position: absolute;
+    width: 140vw;
+    height: 80vh;
+    transition: transform 1s cubic-bezier(.55,.5,.45,.5);
+    will-change: transform;
+    animation: layerFloat 6s ease-in-out infinite;
+}
+
+.hero-background .layer1 {
+    top: -60vh;
+    left: -20vw;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    background: linear-gradient(45deg, #e4f0d2 0%, #e1e6a0 100%);
+    box-shadow: 0 20px 60px 0 rgba(0,0,0,0.05);
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.hero-background .layer2 {
+    top: 78vh;
+    left: 0vw;
+    border-radius: 30% 70% 60% 40% / 40% 60% 30% 70%;
+    background: #116f00;
+    opacity: 0.1;
+    z-index: 2;
+}
+
+.hero-background .layer3 {
+    top: 88vh;
+    left: 5vw;
+    border-radius: 40% 60% 70% 30% / 60% 40% 30% 70%;
+    background: #083700;
+    opacity: 0.3;
+    z-index: 3;
+}
+
+/* Layer floating animation keyframes */
+@keyframes layerFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(0.5deg);
+    }
+    50% {
+        transform: translateY(5px) rotate(-0.5deg);
+    }
+    75% {
+        transform: translateY(-5px) rotate(0.3deg);
+    }
+}
+
+.hero-background .layer1 {
+    animation-delay: 0s;
+    animation-duration: 8s;
+}
+
+.hero-background .layer2 {
+    animation-delay: 1s;
+    animation-duration: 10s;
+}
+
+.hero-background .layer3 {
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+/* Mobile-optimized layer animation */
+@media (max-width: 768px) {
+    .hero-background .layer {
+        animation-duration: 8s;
+    }
+    
+    @keyframes layerFloat {
+        0%, 100% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        25% {
+            transform: translateY(-5px) rotate(0.3deg);
+        }
+        50% {
+            transform: translateY(3px) rotate(-0.3deg);
+        }
+        75% {
+            transform: translateY(-3px) rotate(0.2deg);
+        }
+    }
+}
+
+/* Responsive adjustments for hero background */
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    .hero-background .background {
+        perspective: 800px;
+    }
+    
+    .hero-background .layer {
+        width: 160vw;
+        height: 60vh;
+    }
+    
+    .hero-background .layer1 {
+        top: -40vh;
+        left: -30vw;
+    }
+    
+    .hero-background .layer2 {
+        top: 70vh;
+        left: 20vw;
+    }
+    
+    .hero-background .layer3 {
+        top: 80vh;
+        left: 15vw;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px to 768px) */
+@media (min-width: 600px) and (max-width: 768px) {
+    .hero-background .background {
+        perspective: 900px;
+    }
+    
+    .hero-background .layer {
+        width: 150vw;
+        height: 70vh;
+    }
+    
+    .hero-background .layer1 {
+        top: -50vh;
+        left: -25vw;
+    }
+    
+    .hero-background .layer2 {
+        top: 75vh;
+        left: 10vw;
+    }
+    
+    .hero-background .layer3 {
+        top: 85vh;
+        left: 10vw;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px to 992px) */
+@media (min-width: 768px) and (max-width: 992px) {
+    .hero-background .background {
+        perspective: 1000px;
+    }
+    
+    .hero-background .layer {
+        width: 145vw;
+        height: 75vh;
+    }
+    
+    .hero-background .layer1 {
+        top: -55vh;
+        left: -22vw;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px to 1200px) */
+@media (min-width: 992px) and (max-width: 1200px) {
+    .hero-background .background {
+        perspective: 1100px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .hero-background .background {
+        perspective: 1200px;
+    }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .hero-background .layer {
+        transition: none;
+        animation: none;
+    }
+}
+
