@@ -1,16 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // GitHub Pages configuration
+  output: 'export',
+  trailingSlash: true,
+  basePath: process.env.NODE_ENV === 'production' ? '/GingTrip_landing_page' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/GingTrip_landing_page/' : '',
+  
   // Enable experimental features for better performance
   experimental: {
     optimizePackageImports: ['framer-motion', 'react-icons'],
   },
 
-  // Image optimization settings
+  // Image optimization settings (disabled for static export)
   images: {
-    formats: ['image/webp', 'image/avif'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
+    // formats: ['image/webp', 'image/avif'],
+    // deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    // imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
+    unoptimized: true,
   },
 
   // Compression and performance
@@ -91,16 +98,16 @@ const nextConfig = {
     ];
   },
 
-  // Redirects for invalid routes (commented out to prevent redirect loops)
-  async redirects() {
-    return [
-      {
-        source: '/((?!_next|api|favicon.ico|robots.txt|sitemap.xml|.*\\.)(?!^$).+)',
-        destination: '/',
-        permanent: false,
-      },
-    ];
-  },
+  // Redirects for invalid routes (not supported in static export - comment out)
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: '/((?!_next|api|favicon.ico|robots.txt|sitemap.xml|.*\\.)(?!^$).+)',
+  //       destination: '/',
+  //       permanent: false,
+  //     },
+  //   ];
+  // },
 
   // Environment variables validation
   env: {
