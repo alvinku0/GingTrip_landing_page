@@ -3,13 +3,9 @@
 import { FaArrowRight, FaChevronDown } from "react-icons/fa";
 import Button from "./Button";
 import Visual from "@/public/Visual.png";
-import Cylinder from "@/public/cylinder.png";
-import HalfTorus from "@/public/half-torus.png";
-import CubeHelix from "@/public/cube-helix.png";
 import Pyramid from "@/public/pyramid.png";
 import Tube from "@/public/tube.png";
-import Helix2 from "@/public/helix2 1.png";
-import { motion, useScroll, useTransform, useAnimation } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 const Hero = () => {
@@ -138,7 +134,7 @@ const Hero = () => {
             </h1>
             
             {/* Buttons */}
-            <div className="mt-8 sm:mt-12 md:mt-16 flex flex-row items-center justify-center gap-2 sm:gap-3 text-sm sm:text-base md:text-lg">
+            <div className="mt-8 sm:mt-12 md:mt-16 flex flex-row items-center justify-center gap-2 sm:gap-3 text-sm sm:text-base md:text-lg relative z-30">
               <a href="#product" onClick={(e) => handleNavClick(e, 'product')}>
                 <Button text="Explore Solutions" />
               </a>

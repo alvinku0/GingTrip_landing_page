@@ -25,78 +25,79 @@ const nextConfig = {
   poweredByHeader: false, // Remove X-Powered-By header for security
   
   // Security headers
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          // Security headers
-          {
-            key: 'X-DNS-Prefetch-Control',
-            value: 'on'
-          },
-          {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block'
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN'
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff'
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin'
-          },
-          {
-            key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()'
-          },
-          // Content Security Policy
-          {
-            key: 'Content-Security-Policy',
-            value: [
-              "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com",
-              "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com",
-              "img-src 'self' data: https:",
-              "font-src 'self' https://cdnjs.cloudflare.com",
-              "connect-src 'self'",
-              "frame-ancestors 'self'",
-            ].join('; ')
-          },
-          // Performance headers
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable'
-          }
-        ],
-      },
-      // Static assets caching
-      {
-        source: '/(.*)\\.(js|css|woff|woff2|eot|ttf|otf|png|jpg|jpeg|gif|svg|ico|webp|avif)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable'
-          }
-        ],
-      },
-      // API routes
-      {
-        source: '/api/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'no-store, must-revalidate'
-          }
-        ],
-      }
-    ];
-  },
+  // Not supported in static export - comment out
+  // async headers() {
+  //   return [
+  //     {
+  //       source: '/(.*)',
+  //       headers: [
+  //         // Security headers
+  //         {
+  //           key: 'X-DNS-Prefetch-Control',
+  //           value: 'on'
+  //         },
+  //         {
+  //           key: 'X-XSS-Protection',
+  //           value: '1; mode=block'
+  //         },
+  //         {
+  //           key: 'X-Frame-Options',
+  //           value: 'SAMEORIGIN'
+  //         },
+  //         {
+  //           key: 'X-Content-Type-Options',
+  //           value: 'nosniff'
+  //         },
+  //         {
+  //           key: 'Referrer-Policy',
+  //           value: 'origin-when-cross-origin'
+  //         },
+  //         {
+  //           key: 'Permissions-Policy',
+  //           value: 'camera=(), microphone=(), geolocation=()'
+  //         },
+  //         // Content Security Policy
+  //         {
+  //           key: 'Content-Security-Policy',
+  //           value: [
+  //             "default-src 'self'",
+  //             "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com",
+  //             "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com",
+  //             "img-src 'self' data: https:",
+  //             "font-src 'self' https://cdnjs.cloudflare.com",
+  //             "connect-src 'self'",
+  //             "frame-ancestors 'self'",
+  //           ].join('; ')
+  //         },
+  //         // Performance headers
+  //         {
+  //           key: 'Cache-Control',
+  //           value: 'public, max-age=31536000, immutable'
+  //         }
+  //       ],
+  //     },
+  //     // Static assets caching
+  //     {
+  //       source: '/(.*)\\.(js|css|woff|woff2|eot|ttf|otf|png|jpg|jpeg|gif|svg|ico|webp|avif)',
+  //       headers: [
+  //         {
+  //           key: 'Cache-Control',
+  //           value: 'public, max-age=31536000, immutable'
+  //         }
+  //       ],
+  //     },
+  //     // API routes
+  //     {
+  //       source: '/api/(.*)',
+  //       headers: [
+  //         {
+  //           key: 'Cache-Control',
+  //           value: 'no-store, must-revalidate'
+  //         }
+  //       ],
+  //     }
+  //   ];
+  // },
 
   // Redirects for invalid routes (not supported in static export - comment out)
   // async redirects() {

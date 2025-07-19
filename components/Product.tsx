@@ -1,17 +1,10 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 
 const Product = () => {
   const sectionRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-
-  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
 
   return (
     <section

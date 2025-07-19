@@ -1,10 +1,8 @@
 "use client";
 
-import { FaArrowRight, FaEnvelope } from "react-icons/fa";
-import Button from "./Button";
+import { FaEnvelope } from "react-icons/fa";
 import Star from "@/public/emojistar 1.png";
 import Helix from "@/public/helix2 1.png";
-import Image from "next/image";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
