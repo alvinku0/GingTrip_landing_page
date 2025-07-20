@@ -35,7 +35,7 @@ const Impact = () => {
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">Waste Reduction</h3>
             <p className="text-gray-600 text-center leading-relaxed">
-              Reduce landfill waste through intelligent sorting and recycling programs
+              Reduce landfill waste through intelligent sorting and recycling, preventing cross-contamination and ensuring effective recycling
             </p>
           </motion.div>
 

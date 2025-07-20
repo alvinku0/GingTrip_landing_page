@@ -23,7 +23,7 @@ const Product = () => {
             </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-800 mb-6 sm:mb-8 max-w-4xl mx-auto font-normal leading-relaxed">
-            Discover our integrated suite of sustainability solutions designed for modern aviation operations.
+            Discover our integrated suite of sustainability solutions designed for modern aviation operations
           </p>
         </div>
         
@@ -40,7 +40,7 @@ const Product = () => {
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">In-Flight Recycling</h3>
             <p className="text-gray-600 leading-relaxed text-center mb-6">
-              Waste sorting and recycling infrastructure that maximize resource recovery during flights, reducing landfill waste through material separation and processing.
+              Waste sorting and recycling infrastructure that maximize resource recovery during flights, reducing landfill waste through material separation and processing
             </p>
           </motion.div>
           
@@ -56,7 +56,7 @@ const Product = () => {
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Data-Driven Management</h3>
             <p className="text-gray-600 leading-relaxed text-center mb-6">
-              Analytics platform providing actionable insights into waste patterns, operational efficiency, and sustainability metrics to optimize your management strategy.
+              Analytics platform providing actionable insights into waste patterns, operational efficiency, and sustainability metrics to optimize your management strategy
             </p>
           </motion.div>
           

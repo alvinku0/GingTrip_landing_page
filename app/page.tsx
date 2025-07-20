@@ -1,4 +1,4 @@
-import Impact from "@/components/Benefits";
+import Impact from "@/components/Impact";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
