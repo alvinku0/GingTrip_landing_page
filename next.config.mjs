@@ -3,8 +3,8 @@ const nextConfig = {
   // GitHub Pages configuration
   output: 'export',
   trailingSlash: true,
-  basePath: process.env.NODE_ENV === 'production' ? '/GingTrip_landing_page' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/GingTrip_landing_page/' : '',
+  basePath: '',
+  assetPrefix: '',
   
   // Enable experimental features for better performance
   experimental: {
