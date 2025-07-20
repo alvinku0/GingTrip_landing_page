@@ -4,6 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "GingTrip",
   description: "",
+  icons: {
+    icon: "/logo-gingtrip.png",
+    shortcut: "/logo-gingtrip.png",
+    apple: "/logo-gingtrip.png",
+  },
 };
 
 export default function RootLayout({
@@ -14,7 +19,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" type="image/png" href={`${process.env.NODE_ENV === 'production' ? '/GingTrip_landing_page' : ''}/logo-gingtrip.png`} />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
       </head>
       <body className="antialiased" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
