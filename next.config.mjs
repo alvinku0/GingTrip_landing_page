@@ -1,3 +1,6 @@
+import { copyFileSync } from 'fs';
+import { join } from 'path';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // GitHub Pages configuration
@@ -115,16 +118,18 @@ const nextConfig = {
     CUSTOM_KEY: process.env.CUSTOM_KEY,
   },
 
-  // Bundle analyzer (commented out for production)
-  // webpack: (config, { isServer }) => {
-  //   if (!isServer) {
-  //     config.resolve.fallback = {
-  //       ...config.resolve.fallback,
-  //       fs: false,
-  //     };
-  //   }
-  //   return config;
-  // },
+  // Copy CNAME file for GitHub Pages
+  webpack: (config, { isServer, dev }) => {
+    if (!isServer && !dev) {
+      // Copy CNAME file to output directory during build
+      try {
+        copyFileSync('CNAME', join(process.cwd(), 'out', 'CNAME'));
+      } catch (error) {
+        console.log('CNAME file not found or could not be copied');
+      }
+    }
+    return config;
+  },
 };
 
 export default nextConfig;
