@@ -25,6 +25,23 @@ To get started with the project, follow these steps:
 
    Open [http://localhost:3000](http://localhost:3000) with your browser.
 
+## 🚀 Deployment
+
+### Build for Production
+
+```sh
+npm run build
+```
+
+### Deploy to GitHub Pages
+
+1. Push changes to `main` branch
+2. Static files are automatically exported to `out/` directory
+3. CNAME file is copied for custom domain support
+4. Site deploys automatically via GitHub Actions
+
+The app is configured for static export and optimized for GitHub Pages hosting.
+
 ## Tech Stack
 
 ### Frontend Framework
