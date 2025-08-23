@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className="antialiased" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
         {/* Google Analytics */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-T6TC8RYD6X"
+          src="https://www.googletagmanager.com/gtag/js?id=G-N6WKR299RP"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -33,7 +33,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-T6TC8RYD6X');
+            gtag('config', 'G-N6WKR299RP');
           `}
         </Script>
         {children}
